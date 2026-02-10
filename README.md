@@ -82,30 +82,3 @@ A human-centric interface that provides:
 | DHT22 (SDA)      | GPIO 15   | Data Input      |
 | AC LED (Anode)   | GPIO 2    | Actuator Output |
 | VCC / GND        | 3.3V / GND| Power Rail      |
-
-📸 **Figure 6 – Virtual Wiring Diagram**
-
-![ESP32 Wiring Diagram](screenshots/wiring_diagram.png)
-
----
-
-## 🧠 Core Logic & Thresholds
-
-The Digital Twin operates using a **Closed-Loop Feedback System**:
-
-- **Monitoring:**  
-  Sensor data is updated every **2 seconds**.
-
-- **Automation:**  
-  If  
-  \[
-  \text{Temperature} > 30^\circ\text{C}
-  \]  
-  the Twin logic engine:
-  - Sets the comfort state to **STUFFY**
-  - Turns the AC LED **ON**
-
-- **Manual Override:**  
-  Users can publish an `OFF` message via the MQTT control topic:
-
-
