@@ -1,0 +1,25 @@
+[
+    {
+        "id": "9556314c6d36117f",
+        "type": "function",
+        "z": "9f5e3c3f4fc74b72",
+        "name": "Twin Logic Engine",
+        "func": "let temp = msg.payload.temp;\nlet hum = msg.payload.hum;\n\n// Insight: Comfort Level\nmsg.payload.comfort_level = (temp > 28 && hum >= 40) ? \"STUFFY\" : \"COMFORTABLE\";\n\n// Decision Logic\nif (temp > 30) {\n    msg.payload.action = \"ON\";\n} else {\n    msg.payload.action = \"OFF\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "3203356b225b95b8",
+                "2d13acbdaabb7a56",
+                "4a4f879e3287a855",
+                "ef287cb846d0e3a9"
+            ]
+        ]
+    }
+]
